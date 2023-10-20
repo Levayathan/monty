@@ -7,6 +7,31 @@ int find_wrd_cnt(char *str, char *delims);
 char find_nxt_wrd(char *str, char *delims);
 
 /**
+ * find_nxt_wrd - gets the next word in a string
+ *
+ * @str: string to get next word from
+ * @delims: delimitors to use to delimit words
+ *
+ * Return: pointer to first char of next word
+ */
+
+char find_nxt_wrd(char *str, char *delims)
+{
+        int pending = 0;
+        int i = 0;
+
+        while (*(str + i))
+        {
+                if (check_delimitor(str[i], delims))
+                        pending = 1;
+                else if (pending)
+                        break;
+                i++;
+        }
+        return (str + i);
+}
+
+/**
  * split - takes a string and seperates its words
  *
  * @str: string to seperate into words
@@ -35,7 +60,7 @@ char **split(char *str, char *delims)
 		wordLen = find_wrd_len(str, delims);
 		if (check_delimitor(*str, delims))
 		{
-			str = get_next_word(str, delims);
+			str = find_nxt_wrd(str, delims);
 		}
 		words[i] = malloc((wordLen + 1) * sizeof(char));
 		if (words[i] == NULL)
@@ -55,7 +80,7 @@ char **split(char *str, char *delims)
 			n++;
 		}
 		words[i][n] = '\0'; /* set end of str */
-		str = get_next_word(str, delims);
+		str = find_nxt_wrd(str, delims);
 		i++;
 	}
 	words[i] = NULL; /* last element is null for iteration */
@@ -138,29 +163,4 @@ int find_wrd_cnt(char *str, char *delims)
 		i++;
 	}
 	return (wc);
-}
-
-/**
- * find_nxt_wrd - gets the next word in a string
- *
- * @str: string to get next word from
- * @delims: delimitors to use to delimit words
- *
- * Return: pointer to first char of next word
- */
-
-char find_nxt_wrd(char *str, char *delims)
-{
-	int pending = 0;
-	int i = 0;
-
-	while (*(str + i))
-	{
-		if (check_delimitor(str[i], delims))
-			pending = 1;
-		else if (pending)
-			break;
-		i++;
-	}
-	return (str + i);
 }
