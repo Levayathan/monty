@@ -86,4 +86,4 @@ int sh_err(unsigned int line_number, char *op);
 int spl_err(unsigned int line_number);
 int prtchr_err(unsigned int line_number, char *message);
 
-#endif /* __MONTY_H__ */
+#endif

@@ -1,6 +1,6 @@
+#include <stdio.h>
 #include "monty.h"
 #include <string.h>
-#include <stdio.h>
 
 void empty_tokarray(void);
 unsigned int tokarray_lenght(void);
