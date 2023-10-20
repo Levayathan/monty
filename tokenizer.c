@@ -141,7 +141,7 @@ int find_wrd_cnt(char *str, char *delims)
 }
 
 /**
- * get_next_word - gets the next word in a string
+ * find_nxt_wrd - gets the next word in a string
  *
  * @str: string to get next word from
  * @delims: delimitors to use to delimit words
