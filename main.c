@@ -1,8 +1,6 @@
 #include "monty.h"
 #include "lists.h"
 
-data_t data = DATA_INIT;
-
 /**
  * monty - a function to help main function
  * @argmt: a pointer to a list of arguments
