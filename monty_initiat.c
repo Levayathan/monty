@@ -1,5 +1,7 @@
 #include "monty.h"
 #include "lists.h"
+#include <stdio.h>
+#include <unistd.h>
 
 /**
  * get_func - selects the right function
@@ -51,6 +53,7 @@ void push_inst(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
 	int num = 0, i;
+	data_t data = DATA_INIT;
 
 	if (data.words[1] == NULL)
 	{

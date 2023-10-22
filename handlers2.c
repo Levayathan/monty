@@ -1,5 +1,7 @@
 #include "monty.h"
 #include "lists.h"
+#include <stdio.h>
+#include <unistd.h>
 
 /**
  * sub_inst - substraction handler

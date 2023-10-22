@@ -1,6 +1,8 @@
 #include "monty.h"
 #include "lists.h"
 
+static data_t data = DATA_INIT;
+
 /**
  * rotl_inst - rotl handler
  * @stack: double pointer to the stack to push to
@@ -48,6 +50,7 @@ void rotr_inst(stack_t **stack, unsigned int line_number)
  */
 void stack_inst(stack_t **stack, unsigned int line_number)
 {
+
 	(void)stack;
 	(void)line_number;
 	data.qflag = 0;
@@ -61,6 +64,7 @@ void stack_inst(stack_t **stack, unsigned int line_number)
  */
 void queue_inst(stack_t **stack, unsigned int line_number)
 {
+
 	(void)stack;
 	(void)line_number;
 	data.qflag = 1;

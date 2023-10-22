@@ -1,5 +1,7 @@
 #include "monty.h"
 #include "lists.h"
+#include <stdio.h>
+#include <unistd.h>
 
 /**
  * monty - a function to help main function
@@ -13,6 +15,7 @@ void monty(args_t *argmt)
 	size_t len = 0;
 	int get = 0;
 	void (*code_func)(stack_t **, unsigned int);
+	data_t data = DATA_INIT;
 
 	if (argmt->argnum != 2)
 	{

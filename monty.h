@@ -69,7 +69,9 @@ typedef struct data_s
 
 typedef stack_t dlistint_t;
 
-extern data_t data;
+extern int dprintf(int fd, const char *fmt, ...);
+
+extern ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 #define DATA_INIT {NULL, NULL, NULL, NULL, 0}
 
