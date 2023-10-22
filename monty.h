@@ -69,6 +69,8 @@ typedef struct data_s
 
 typedef stack_t dlistint_t;
 
+extern char **op_toks;
+
 extern int dprintf(int fd, const char *fmt, ...);
 
 extern ssize_t getline(char **lineptr, size_t *n, FILE *stream);
