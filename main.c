@@ -19,13 +19,13 @@ void monty(args_t *argmt)
 
 	if (argmt->argnum != 2)
 	{
-		dprintf(STDERR_FILENO, USAGE);
+		fprintf(stderr, USAGE);
 		exit(EXIT_FAILURE);
 	}
 	data.fptr = fopen(argmt->fnm, "r");
 	if (!data.fptr)
 	{
-		dprintf(STDERR_FILENO, FILE_ERROR, argmt->fnm);
+		fprintf(stderr, FILE_ERROR, argmt->fnm);
 		exit(EXIT_FAILURE);
 	}
 	while (1)
@@ -43,7 +43,7 @@ void monty(args_t *argmt)
 		code_func = get_func(data.words);
 		if (!code_func)
 		{
-			dprintf(STDERR_FILENO, UNKNOWN, argmt->line_number, data.words[0]);
+			fprintf(stderr, UNKNOWN, argmt->line_number, data.words[0]);
 			empty_all(1);
 			exit(EXIT_FAILURE);
 		}

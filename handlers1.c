@@ -14,7 +14,7 @@ void pint_inst(stack_t **stack, unsigned int line_number)
 
 	if (!bgn)
 	{
-		dprintf(STDERR_FILENO, PINT_FAIL, line_number);
+		fprintf(stderr, PINT_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -33,7 +33,7 @@ void pop_inst(stack_t **stack, unsigned int line_number)
 
 	if (!temp)
 	{
-		dprintf(STDERR_FILENO, POP_FAIL, line_number);
+		fprintf(stderr, POP_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -53,7 +53,7 @@ void swap_inst(stack_t **stack, unsigned int line_number)
 
 	if (dll_lenght(*stack) < 2)
 	{
-		dprintf(STDERR_FILENO, SWAP_FAIL, line_number);
+		fprintf(stderr, SWAP_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -64,7 +64,7 @@ void swap_inst(stack_t **stack, unsigned int line_number)
 	node = put_node_dll(stack, 1, num);
 	if (!node)
 	{
-		dprintf(STDERR_FILENO, MALLOC_FAIL);
+		fprintf(stderr, MALLOC_FAIL);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -84,7 +84,7 @@ void add_inst(stack_t **stack, unsigned int line_number)
 
 	if (dll_lenght(*stack) < 2)
 	{
-		dprintf(STDERR_FILENO, ADD_FAIL, line_number);
+		fprintf(stderr, ADD_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -95,7 +95,7 @@ void add_inst(stack_t **stack, unsigned int line_number)
 	node = node_begin(stack, sum);
 	if (!node)
 	{
-		dprintf(STDERR_FILENO, MALLOC_FAIL);
+		fprintf(stderr, MALLOC_FAIL);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}

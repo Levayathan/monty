@@ -57,7 +57,7 @@ void push_inst(stack_t **stack, unsigned int line_number)
 
 	if (data.words[1] == NULL)
 	{
-		dprintf(STDERR_FILENO, PUSH_FAIL, line_number);
+		fprintf(stderr, PUSH_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -66,7 +66,7 @@ void push_inst(stack_t **stack, unsigned int line_number)
 	{
 		if (isalpha(data.words[1][i]) != 0)
 		{
-			dprintf(STDERR_FILENO, PUSH_FAIL, line_number);
+			fprintf(stderr, PUSH_FAIL, line_number);
 			empty_all(1);
 			exit(EXIT_FAILURE);
 		}
@@ -79,7 +79,7 @@ void push_inst(stack_t **stack, unsigned int line_number)
 		new = node_last(stack, num);
 	if (!new)
 	{
-		dprintf(STDERR_FILENO, MALLOC_FAIL);
+		fprintf(stderr, MALLOC_FAIL);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}

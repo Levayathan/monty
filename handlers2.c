@@ -17,7 +17,7 @@ void sub_inst(stack_t **stack, unsigned int line_number)
 
 	if (dll_lenght(*stack) < 2)
 	{
-		dprintf(STDERR_FILENO, SUB_FAIL, line_number);
+		fprintf(stderr, SUB_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -28,7 +28,7 @@ void sub_inst(stack_t **stack, unsigned int line_number)
 	node = node_begin(stack, sub);
 	if (!node)
 	{
-		dprintf(STDERR_FILENO, MALLOC_FAIL);
+		fprintf(stderr, MALLOC_FAIL);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -48,14 +48,14 @@ void div_inst(stack_t **stack, unsigned int line_number)
 
 	if (dll_lenght(*stack) < 2)
 	{
-		dprintf(STDERR_FILENO, DIV_FAIL, line_number);
+		fprintf(stderr, DIV_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
 
 	if (node_0->n == 0)
 	{
-		dprintf(STDERR_FILENO, DIV_ZERO, line_number);
+		fprintf(stderr, DIV_ZERO, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -66,7 +66,7 @@ void div_inst(stack_t **stack, unsigned int line_number)
 	node = node_begin(stack, div);
 	if (!node)
 	{
-		dprintf(STDERR_FILENO, MALLOC_FAIL);
+		fprintf(stderr, MALLOC_FAIL);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -86,7 +86,7 @@ void mul_inst(stack_t **stack, unsigned int line_number)
 
 	if (dll_lenght(*stack) < 2)
 	{
-		dprintf(STDERR_FILENO, MUL_FAIL, line_number);
+		fprintf(stderr, MUL_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -97,7 +97,7 @@ void mul_inst(stack_t **stack, unsigned int line_number)
 	node = node_begin(stack, mul);
 	if (!node)
 	{
-		dprintf(STDERR_FILENO, MALLOC_FAIL);
+		fprintf(stderr, MALLOC_FAIL);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -117,14 +117,14 @@ void mod_inst(stack_t **stack, unsigned int line_number)
 
 	if (dll_lenght(*stack) < 2)
 	{
-		dprintf(STDERR_FILENO, MOD_FAIL, line_number);
+		fprintf(stderr, MOD_FAIL, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
 
 	if (node_0->n == 0)
 	{
-		dprintf(STDERR_FILENO, DIV_ZERO, line_number);
+		fprintf(stderr, DIV_ZERO, line_number);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
@@ -135,7 +135,7 @@ void mod_inst(stack_t **stack, unsigned int line_number)
 	node = node_begin(stack, mod);
 	if (!node)
 	{
-		dprintf(STDERR_FILENO, MALLOC_FAIL);
+		fprintf(stderr, MALLOC_FAIL);
 		empty_all(1);
 		exit(EXIT_FAILURE);
 	}
